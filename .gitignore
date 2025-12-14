@@ -12,6 +12,7 @@ _build/
 *.synctex.gz
 *.bbl
 *.blg
+*.pdf
 
 *.swp
 *.bak
