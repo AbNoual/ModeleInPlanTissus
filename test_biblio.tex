@@ -1,0 +1,13 @@
+\documentclass{report}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliography/references.bib}
+
+\begin{document}
+	
+	Test \cite{Cao2008Woven}.
+	
+	\nocite{*}
+	\printbibliography[heading=bibintoc,title={References}]
+	
+\end{document}

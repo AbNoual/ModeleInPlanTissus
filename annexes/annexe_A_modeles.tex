@@ -1,0 +1,54 @@
+\chapter{Detailed constitutive models}
+\label{ann:A_models}
+
+This appendix provides additional details on the constitutive models
+used to describe the in-plane shear behavior of woven structures.
+These developments complement the formulations presented in the main
+chapters and are provided for completeness.
+
+\section{Kinematic framework}
+
+The deformation of the material is described by the deformation
+gradient $\F$. The right Cauchy--Green tensor is defined as
+\begin{equation}
+	\C = \F^{\mathrm{T}} \F
+\end{equation}
+
+For in-plane deformations, the shear component $\gammaxy$ is extracted
+from the Green--Lagrange strain tensor.
+
+\section{Shear strain measure}
+
+The in-plane shear strain is defined as
+\begin{equation}
+	\gammaxy = 2 E_{12}
+\end{equation}
+where $E_{12}$ denotes the shear component of the Green--Lagrange strain
+tensor.
+
+\section{Strain energy decomposition}
+
+The strain energy density function $\W$ is decomposed as
+\begin{equation}
+	\W = \W_{\text{tension}} + \W_{\text{shear}}
+\end{equation}
+
+This additive decomposition allows independent calibration of tensile
+and shear responses from dedicated experimental tests.
+
+\section{Shear constitutive law}
+
+A nonlinear shear law is introduced in order to capture the stiffening
+observed at large shear angles:
+\begin{equation}
+	\W_{\text{shear}} = \frac{1}{2} G_{12} \gammaxy^2
+	\left( 1 + \alpha \gammaxy^2 \right)
+\end{equation}
+where $G_{12}$ is the initial shear modulus and $\alpha$ is a
+nonlinearity parameter.
+
+\section{Remarks on numerical implementation}
+
+The shear constitutive model is implemented within a \UMAT{} subroutine
+in Abaqus. The tangent stiffness matrix is derived analytically to
+ensure quadratic convergence of the Newton--Raphson scheme.

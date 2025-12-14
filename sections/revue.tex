@@ -1,0 +1,157 @@
+\chapter{Modèles pour le comportement dans le plan des tissus et composites tissés}
+
+\section{Introduction}
+
+Un tissu et un composite tissés peuvent être décrit comme une structure architecturée qui résulte d'un assemblage de filaments dans le sens chaine et trame
+
+
+Des études expérimentales \Cite{characterization_cao_2008,experimental_launay_2008} ont mis en évidence les phénomènes mécaniques qui gouverne le comportement dans le plan de la structure, on peut citer :
+
+
+\begin{itemize}[label=\textbullet]
+	
+	\item La non linéarité, l'anisotropie et le réarrangement des filament sens chaine et trame en grandes déformation (les directions chaine et trame deviennent non orthogonale)
+	\item Frottement, hystéries
+	\item La différence de quantité des filaments dans le sens chaine et trame (un tissu ou un composite tissés ne sont pas forcément équilibrés)
+	\item Le couplage tension cisaillement dans le plan
+	\item L'apparition des plis lors de la mise en forme notamment pour les formes non développables
+
+\end{itemize}
+
+
+\section{Les différente modèles macroscopiques concurrent à notre modèle \textcolor{red}{hyperélastique anisotrope}}
+
+Que les modèles qui prennent en compte la réorientation des directions chaine et trame dans les tissus et composites tissés ont étaient sélectionnés car ils sont les plus compétitifs au modèle qu'on propose.
+
+Le modèle qu'on propose est hyperélastique anisotrope qui prédit la réorientation des directions sens chaine et trame (grâce l'introduction de la base duale dans la formulation de la relation contraintes déformation) et caractérise les tissus équilibrés et non équilibrés (grâce à la pondération des potentiels sens chaine et trame par la fraction massique)
+
+\subsection{Modèles hypoélastiques et hyperélastique approche continu}
+\cite{hypoelasticity_bernstein_1960} et \cite{objective_xiao_1998} deux articles de référence dans le développement des loi hypoélastiques (problème d'objectivité de la loi de comportement)
+
+
+\cite{hypoelastic_boisse_2010} ont comparé tois modèle dont un hypoélastique et un autre hyperelastique anisotrope, \cite{continuum_peng_2005,numerical_khan_2010} et \cite{hypoelastic_freed_2010} ont proposé des lois macroscopique Hypoélastique anisotrope qui peut décrire la réorientation des fibres chaine trame
+
+\subsubsection{Points positifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item Prédire la réorientation des fibres
+	\item Reproduit une rigidité de cisaillement non linéaire
+	
+\end{itemize}
+
+\subsubsection{Points négatifs}
+
+\begin{itemize}[label=\textbullet]	
+	\item Ne dérive pas d'un potentiel élastique pour les modèle Hypoelastique
+	\item Ne prédit pas les plis pour les deux modèles 
+	\item Pas de couplage cisaillement tension 
+	\item Pas de dissipation
+	\item Que pour les tissu équilibrés
+\end{itemize}
+
+
+\subsection{Modèle semi-discret}
+
+\cite{semidiscrete_hamila_2009,simulation_boisse_2011} ont développé des éléments fini ayant de forme triangulaire renforcé par des cellules unitaires tissées qui ont un comportement en traction dans les deux sens chaine et tram, un comportement en cisaillement dans le plan et une rigidité en flexion hors plan pour capturer les plis.
+
+
+
+\subsubsection{Points positifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item très adapté pour la mise en forme 
+	\item Capable de reproduire les plis
+	
+	
+\end{itemize}
+
+	
+\subsubsection{Points négatifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item pas de loi de comportement  
+	\item Pas de potentiel élastique
+	\item Pas de couplage tension cisaillement
+	\item très coûteux 
+	\item Que pour les tissu équilibrés
+	
+\end{itemize}
+
+
+
+\subsection{Modèles non-orthogonaux macroscopiques basé sur l'homogénéisation d'un VER à l'échelle méso-scopiques}
+
+\cite{dual_peng_2002,development_erol_2017} modèles développés pour caractériser les tissus anisotrope en grandes déformation dans laquelle comportement du tissu est décrit on se servant de l'actualisation de la matrice de rigidité à chaque point d'intégration.  
+
+\subsubsection{Points positifs}
+
+\begin{itemize}[label=\textbullet]
+
+	\item Caractérise les tissus anisotropes en grandes déformation (grâce à la formulation mathématique rigoureuse)
+
+\end{itemize}
+
+\subsubsection{Points négatifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item Ne dérive pas d'un potentiel 
+	\item Pas de frottement ni d'hystéries
+	\item Que pour les tissus équilibrés
+	
+\end{itemize}
+
+
+\subsection{Modèle couplé tension cisaillement dans le plan}
+
+C'est en 2008 que \cite{experimental_launay_2008} a mis en évidence le couplage tension cisaillement dans le plan, des modèles \cite{simulation_boisse_2011,effect_komeili_2016} ont étaient proposé par la suite en incluant ce couplage, utilisation proposition des eEF ayant une rigidité en flexion des vfavric d'abaqus
+
+\subsubsection{Points positifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item Peuvent décrire les plis du au instabilité 
+	\item Caractérise les tissus anisotrope en grandes déformations
+	
+	
+\end{itemize}
+
+
+
+\subsubsection{Points négatifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item Ne dérivent pas d'un potentiel 
+	\item Pas de frottement ni d'hystéries
+	\item Que pour les tissus équilibrés
+	
+\end{itemize}
+
+
+
+\section{D'autres modèles}
+\subsection{Modèle analytiques homogénéisation d'un RVE, ou par minimisation des potentiels élastiques}
+
+\cite{micromechanical_realff_1997} un modèles qui utilisent d'un RVE (un motif élémentaire d'un tissu pour) pour calculer les propriétés effective du tissu à l'échelle macroscopique
+\cite{micromechanical_chaouachi_2014} un modèle analytique qui utilise la minimisation de l'énergie 
+\subsubsection{Points positifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item Permet de mettre en déviance les phénoménes qui entre en jeu dans le comportement dans le plan d'un tissu 
+	\item Permet de trouver la rigidité de la structure à l'échelle macroscopique sans faire d'essais expérimentaux
+	
+\end{itemize}
+
+\subsubsection{Points négatifs}
+
+\begin{itemize}[label=\textbullet]
+	
+	\item Modèle mésoscopique qui coutent chère en temps de calcul si on veut simuler toute la structure
+	\item Que pour les tissus équilibrés ou a motifs répétable
+	
+\end{itemize}
